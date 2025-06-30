@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+     <link rel="stylesheet" href="{% static 'styles/login.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lemon&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% if messages %}
+      <ul class="messages">
+           {% for message in messages %}
+                <li>{{message}}</li>
+           {% endfor %}
+      </ul>
+    {% endif %}
+
+    
+   <div class="login-layout">
+        <div class="login-inner-layout">
+            <div class="login-header">
+                <svg width="45" height="45" xmlns="http://www.w3.org/2000/svg" id="profile-icon">
+                    <image href="{% static 'images/back-btn.svg' %}" x="0" y="0" width="45" height="45" id="profile-icon" />
+                </svg>
+                <h1>login</h1>
+            </div>
+            <div id="login-details-form">
+                <form method="POST" action=""  >
+                     {% csrf_token %}
+                    <div class="email-section">
+                        <label>Email:</label><br>
+                        <input type="email" placeholder="Email" name="email"/>
+                    </div>
+                    <div class="password-section">
+                        <label>password:</label><br>
+                        <input type="password" placeholder="password" name="password" />
+                    </div>
+                    <div class="login-btn">
+                        <input type="submit" placeholder="login"/>
+                    </div>
+                </form>
+                <div class="signup-section">
+                    <p>haven't signup yet?</p>
+                    <a href="{% url 'register' %}">signup</a>
+                 </div>
+            </div>
+            
+        </div>
+   </div>
+
+</body>
+</html>

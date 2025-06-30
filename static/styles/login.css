@@ -1,0 +1,88 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Lemon", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.login-layout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-inner-layout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.login-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #444242;
+    width: 100%;
+    height: 70px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 10px 10px 0px 0px;
+}
+#login-details-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px ;
+    background-color: #808080;
+    border-radius: 0px 0px 10px 10px;
+}
+.signup-section{
+     display: flex;
+     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap:5px;
+}
+.email-section{
+    padding: 10px;
+    
+}
+.email-section label{
+    font-size: 25px;
+    
+}
+.email-section input{
+   width:350px;
+   height: 40px;
+     margin-top: 5px;
+}
+.password-section{
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.password-section label{
+    font-size: 25px;
+
+}
+.password-section input{
+    width:350px;
+   height: 40px;
+   margin-top: 5px;
+
+}
+.login-btn{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.login-btn input{
+    width:100px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 10px 10px 0px 0px ;
+}

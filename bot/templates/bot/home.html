@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braina</title>
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lemon&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% if messages %}
+      <ul class="messages">
+           {% for message in messages %}
+                <li>{{message}}</li>
+           {% endfor %}
+      </ul>
+    {% endif %}
+
+    
+
+         <div class="main-page-layout">
+           
+                
+                    <div class="main-page-header">
+                        <div class="logo-section">
+                            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" id="logo">
+                            <image href="{% static 'images/Braina-logo.png' %}" x="0" y="0" width="50" height="50" id="logo" />
+                            </svg>
+                          <h2>Braina!</h2>
+                        </div>  
+                        {% if request.user.is_authenticated %}
+                        <div><big id="welcome-msg">Welcome {{request.user}}</big></div>
+                        {% endif %}
+                        <div class="about-user">
+                            <a><svg width="45" height="45" xmlns="http://www.w3.org/2000/svg" id="profile-icon">
+                            <image href="{% static 'images/user-profile-img.jpg' %}" x="0" y="0" width="45" height="45" id="profile-icon" />
+                            </svg></a>
+                            <a id="down-arrow"><svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                            <image href="{% static 'images/down-btn.svg' %}" x="0" y="0" width="30" height="30" id="down-arrow-btn"/>
+                            </svg></a>
+
+                        </div>
+                    </div>
+
+                    <div class="main-page-body-layout">
+                        <div class="body-chats-section">
+                            <div class="previous-chats-header">
+                                <h2>Chats</h2>
+                                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                                   <image href="{% static 'images/plus-btn.svg' %}" x="0" y="0" width="30" height="30" id="plus-btn" />
+                                </svg>
+                            </div>  
+                            <div id="room-form" style="display: none; margin-top: 10px;">
+                                    <form method="POST" action="{% url 'create_room' %}">
+                                        {% csrf_token %}
+                                        <input type="text" name="room_name" placeholder="Enter Room Name" required />
+                                        <button type="submit">Create</button>
+                                    </form>
+                            </div>  
+                           <div class="previous-chats">
+                                {% for room in rooms %}
+                                    <a href="{% url 'room' room.id %}">
+                                        <p>{{ room.name }}</p>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="body-ask-section">
+                            <div id="room-form2" style="display: none; margin-top: 10px;">
+                                    <form method="POST" action="{% url 'create_room' %}">
+                                        {% csrf_token %}
+                                        <input type="text" name="room_name" placeholder="Enter Room Name" required />
+                                        <button type="submit">Create</button>
+                                    </form>
+                            </div> 
+                            
+                            
+                           <div class="user-interaction-section">
+                                {% if room_messages %}
+                                    {% for message in room_messages %}
+                                        <div class="chat-message {% if message.sender == 'user' %}user-message{% else %}bot-message{% endif %}">
+                                            <b>{{ message.sender|upper }}:</b><br> {{ message.body }}
+                                        </div>
+                                    {% endfor %}
+                                {% else %}
+                                        <big id="what-can">What can i help with ?</big>
+                                {% endif %}
+                            </div>
+
+                      
+                                <div class="search-section">
+                                    <div class="ask-anything">
+                                        {% if selected_room %}
+                                        <form method="POST" action="{% url 'chat_api' selected_room.id %}" id="input-form">
+                                            {% csrf_token %}
+                                            <input type="text" placeholder="Ask anything..." name="question" required/>
+                                            <button type="submit" id="ask-btn">Send</button>
+                                        </form>
+                                        {% else %}
+                                        <p>Please select or create room to start chat....</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="input-controls">
+                                       <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                                      <image href="{% static 'images/plus-btn.svg' %}" x="0" y="0" width="30" height="30" id="plus-btn2" />
+                                   </svg>
+                                        <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
+                                        <image href="{% static 'images/voice-btn.svg' %}" x="0" y="0" width="25" height="25" id="voice-btn"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+           
+   
+<script>
+  let isLoggedIn = "{{ request.user.is_authenticated|yesno:'true,false' }}";
+</script>
+
+<script src="{% static 'scripts/home.js' %}"></script>
+</body>
+</html>

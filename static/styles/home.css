@@ -1,0 +1,261 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Lemon", serif;
+    font-weight: 400;
+    font-style: normal;
+    
+    
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+#logo{
+    border-radius: 50%;
+}
+
+.main-page-layout{
+   
+     height: 100vh;
+    width: 100vw;
+    background-color: #757575;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    
+}
+.main-page-header{
+    
+    width: 100%;
+    
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #444242;
+    padding: 10px 30px 10px 30px;
+    box-sizing: border-box;
+   
+
+}
+.main-page-body-layout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: #808080;
+    padding: 30px;
+}
+.body-chats-section{
+    width:400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background-color: #757474;
+    padding: 0px 5px 10px 5px;
+    margin:10px;
+    height: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+@media(max-width:945px){
+.body-chats-section{
+    display: none;
+  }
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  #welcome-msg{
+    display: none;
+  }
+  
+  .search-section{
+    width:100%;
+    padding: 0px;
+    margin: 0px;
+  }
+   .ask-anything form input{
+    width: 90%;
+  }
+
+}
+@media(max-width:450px){
+    *{
+        padding:0px;
+        margin: 0px;
+    }
+  #interaction{
+    font-size: 16px;
+  }
+  
+  .search-section{
+    width: 100%;
+  }
+ 
+ 
+  .body-ask-section{
+    width:100px
+  }
+  .main-page-header{
+    padding: 0px;
+    height: 90px;
+  }
+}
+.body-ask-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     background-color: #757474;
+    padding: 10px;
+    margin:10px;
+   width: 100%;
+   height: 100%;
+   border-radius: 10px 10px 0px 0px;
+}
+
+
+.input-controls{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  
+
+}
+.ask-anything{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 4px;
+    width: 100%;
+}
+.ask-anything form{
+  width: 100%;
+  margin-right: 5px;
+}
+.ask-anything form input{
+    width: 100%;
+    height: 50px;
+    background-color: #444242;
+    color: white;
+    border: none;
+    font-size: 19px;
+}
+.previous-chats-header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #444242;
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.previous-chats{
+display: flex;
+flex-direction: column;
+align-items: start;
+justify-content: start;
+width: 100%;
+}
+.previous-chats p{
+    font-size: 15px;
+    padding: 10px 5px 10px 5px;
+}
+.logo-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    text-shadow:0 0 0px #0ff, 0 0 5px #0ff, 0 0 20px #0ff;
+}
+
+
+
+
+.search-section{
+    display: flex;
+    align-items:start;
+    justify-content:center;
+    flex-direction: column;
+    background-color: #444242;
+    width:100%;
+    height: 100px;
+    padding: 4px;
+    border-radius: 10px 10px 0px 0px;
+   
+}
+#profile-icon{
+    border-radius: 50%;
+}
+.user-interaction-section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 500px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding: 5px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  overflow-x: hidden;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+  border-radius: 12px;
+  border: none;
+}
+#welcome-msg{
+  color: white;
+}
+#what-can{
+  text-align: center;
+}
+
+
+.chat-message {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+
+.user-message {
+  align-self: flex-end;
+  background-color: #d1e7ff;
+  color: #000;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #e7cfcf;
+  color: #000;
+}
+#input-form{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap:10px;
+}
+#ask-btn{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 1px whitesmoke;
+}
