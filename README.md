@@ -68,19 +68,19 @@ chatbot/
 ```bash
 git clone https://github.com/yogeswar2006/Chatbot-AI.git
 cd Chatbot-AI
-python -m venv venv
-venv\Scripts\activate   
+python -m venv venv     #create a virtual environment for project
+venv\Scripts\activate   #activate virtual environment
 
-pip install -r requirements.txt
+pip install -r requirements.txt    #optional...
 
 cp .env.example .env
 # Edit the .env file with your actual SECRET_KEY and Gemini API key
 
-python manage.py migrate
-python manage.py runserver
+python manage.py migrate    #make migrations to update changes you made
+python manage.py runserver  #runserver....
 
-http://127.0.0.1:8000/
-
+http://127.0.0.1:8000/     #open this port in your browser
+ bash```
 
 ## 📷 Screenshots
 
