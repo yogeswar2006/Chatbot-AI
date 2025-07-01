@@ -47,15 +47,15 @@ An intelligent AI-powered chatbot web application built using **Django** and int
 ---
 
 ## 📁 Project Structure
-chatbot/
-├── bot/ # Django app with views, models, forms
-├── templates/ # HTML templates
-├── static/ # Static JS/CSS files
-├── db.sqlite3 # SQLite database (excluded from Git)
-├── .env # Environment variables (excluded)
-├── .env.example # Example environment file
-├── .gitignore
-└── manage.py
+chatbot/  
+├── bot/ # Django app with views, models, forms  
+├── templates/ # HTML templates  
+├── static/ # Static JS/CSS files  
+├── db.sqlite3 # SQLite database (excluded from Git)  
+├── .env # Environment variables (excluded)  
+├── .env.example # Example environment file  
+├── .gitignore  
+└── manage.py  
 
 
 
@@ -63,23 +63,23 @@ chatbot/
 
 ## 📦 Setup Instructions
 
-1. **Clone the repository**
+1. **Clone the repository**  
 
 
-git clone https://github.com/yogeswar2006/Chatbot-AI.git
-cd Chatbot-AI
-python -m venv venv     #create a virtual environment for project
-venv\Scripts\activate   #activate virtual environment
+git clone https://github.com/yogeswar2006/Chatbot-AI.git  
+cd Chatbot-AI  
+python -m venv venv     #create a virtual environment for project  
+venv\Scripts\activate   #activate virtual environment  
 
-pip install -r requirements.txt    #optional...
+pip install -r requirements.txt    #optional...  
 
-cp .env.example .env
-# Edit the .env file with your actual SECRET_KEY and Gemini API key
+cp .env.example .env  
+# Edit the .env file with your actual SECRET_KEY and Gemini API key  
 
-python manage.py migrate    #make migrations to update changes you made
-python manage.py runserver  #runserver....
+python manage.py migrate    #make migrations to update changes you made  
+python manage.py runserver  #runserver....  
 
-http://127.0.0.1:8000/     #open this port in your browser
+http://127.0.0.1:8000/     #open this port in your browser  
  bash```
 
 ## 📷 Screenshots
@@ -98,7 +98,7 @@ http://127.0.0.1:8000/     #open this port in your browser
 ![Register Page](screenshots/register.png)
 
 
-🙌 Author
+🙌 Author  
 Made with ❤️ by Yogeswar Reddy
 
 GitHub= https://github.com/yogeswar2006
