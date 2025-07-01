@@ -64,7 +64,7 @@ chatbot/
 ## 📦 Setup Instructions
 
 1. **Clone the repository**  
-
+```bash
 
 git clone https://github.com/yogeswar2006/Chatbot-AI.git  
 cd Chatbot-AI  
@@ -73,14 +73,13 @@ venv\Scripts\activate   #activate virtual environment
 
 pip install -r requirements.txt    #optional...  
 
-cp .env.example .env  
-# Edit the .env file with your actual SECRET_KEY and Gemini API key  
+cp .env.example .env  # Edit the .env file with your actual SECRET_KEY and Gemini API key  
 
 python manage.py migrate    #make migrations to update changes you made  
 python manage.py runserver  #runserver....  
 
 http://127.0.0.1:8000/     #open this port in your browser  
- bash```
+ ```
 
 ## 📷 Screenshots
 
