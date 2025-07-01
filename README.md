@@ -65,7 +65,7 @@ chatbot/
 
 1. **Clone the repository**
 
-```bash
+
 git clone https://github.com/yogeswar2006/Chatbot-AI.git
 cd Chatbot-AI
 python -m venv venv     #create a virtual environment for project
